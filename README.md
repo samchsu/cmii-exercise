@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# CMII Technical Exercise - Instructions
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This program was created using Electron.js + React.js. 
 
-## Available Scripts
+Please clone this repository and "cmii-backend" repository to get started.
 
-In the project directory, you can run:
+## Getting Started in this repository
 
-### `yarn start`
+In this project directory, you can run:
+
+### `npm install`
+
+This will install all the necessary dependencies.
+
+### `npm start`
 
 Runs the app in the development mode.\
+Upon launch, the Electron Application will run.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+### `npm build`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This will build the application and create an executable file within the project folder. 
 
-### `yarn build`
+## Getting Started in "cmii-backend" repository
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In "cmii-backend" directory, you can run:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `pip install` 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This will install all the necessary dependencies.
 
-### `yarn eject`
+### `flask run`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Runs the app in the development mode.\
+Upon launch, the Electron Application will run.
+Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# CMII Technical Exercise - My Approach
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+For the frontend, the The hardest part about this exercise was figuring out how to use Flask (I've only used Node.JS in the past) and finding a viable option to import a JSON Object and store it on a new Excel Spreadsheet. I struggled with flask_excel before turning over to pandas, which gave me the ability to create a new spreadsheet and store the JSON Object data as a dataframe. From there, I saved the Excel File to the Flask Server, and converted it into a blob for my React Frontend to receive as a response. This blob will then be converted into a downloadable file and the Frontend will open the file window to download "my_selected_milestones.xlsx".
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# CMII Technical Exercise - Changes
 
-## Learn More
+I would create a "select & unselect" system for the user, rather than a "select and start over" system if the user accidentally clicks on a milestone. Also, the first object imported from excel sheet is the title ("Milestone" and "Completion Time") and should not be clickable by the user. If this application was used for another excel sheet, I would be creating an edge case if I were to skip over the first object. Because of this, I did not end up changing the state of that object. In addition, the new excel sheet contains the user selected milestones and organizes them by columns "Selected milestone(s) and Selected completion date", but fails to remove the JSON Object format. If I was given more time, I would have the milestones and the one completion date not display as Key, Value pairs. I would also only permit users to submit files with .xlsx filetype.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Final Thoughts
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you for this exercise, and I look forward to reviewing it with you.

@@ -1,20 +1,35 @@
-.App {
+.exercise {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#input-file {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+label {
+  font-size: 12px;
 }
 
-.App-header {
-  background-color: #282c34;
+.instruction {
+  font-size: 20px;
+  padding-top: 20px;
+}
+
+.start-over {
+  cursor: pointer;
+  font-size: 20px;
+  padding-top: 20px;
+}
+
+.start-over:hover {
+  color: #82d4db;
+  transition-duration: 0.4s;
+}
+
+.exercise-header {
+  background-color: #26385f;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,17 +39,52 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.custom-file-upload:hover {
+  border-color: #82d4db;
+  transition-duration: 0.4s;
+}
+
+.Title {
+  padding-top: 80px;
+  font-weight: bold;
+  font-size: 100px;
+  color: white;
+  cursor: pointer;
+}
+
+.Title:hover {
+  color: #82d4db;
+  transition-duration: 0.4s;
+}
+
+.milestones {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.milestones:hover {
+  color: #82d4db;
+  transition-duration: 0.4s;
+}
+
+.button {
+  border: 1px solid #ccc;
+  font-size: 18px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.button:hover {
+  border-color: #82d4db;
+  transition-duration: 0.4s;
 }
 
 a {
