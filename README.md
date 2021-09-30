@@ -1,8 +1,8 @@
 # CMII Technical Exercise - Instructions
 
-This program was created using Electron.js + React.js. 
+This program was created using Electron.js + React.js with Flask Backend. 
 
-Please clone this repository and "cmii-backend" repository to get started.
+Please clone this repository to get started.
 
 ## Getting Started in this repository
 
@@ -14,25 +14,11 @@ In this project directory, you can run:
 
 This will install all the necessary dependencies.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Upon launch, the Electron Application will run.
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.
-
 ### `npm build`
 
 This will build the application and create an executable file within the project folder. 
 
 ## Getting Started in "cmii-backend" repository
-
-In "cmii-backend" directory, you can run:
-
-### `source venv/Scripts/activate`
-
-That will enable the venv environment.
 
 ### `pip install flask` 
 
@@ -40,13 +26,14 @@ That will enable the venv environment.
 
 ### `pip install flask_cors`
 
-This will install all the necessary dependencies.
+### `pip install xlsxwriter`
 
-### `flask run`
+## Running the Application 
+
+### `npm start`
 
 Runs the app in the development mode.\
-Upon launch, the Electron Application will run.
-Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
+Upon launch, the Electron Application will run on [http://localhost:3000](http://localhost:3000) and the Flask Application will run on [http://localhost:5000](http://localhost:5000)
 
 # CMII Technical Exercise - My Approach
 

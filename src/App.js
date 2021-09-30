@@ -1,16 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {ExcelRenderer} from 'react-excel-renderer';
 
 function App() {
   // Hooks used
-  const [cols, setCols] = useState([]);
-  const [rows, setRows] = useState([{}]);
+  const [rows, setRows] = useState({});
   const [selected, setSelected] = useState({});
   const [started, setStarted] = useState(false);
   const [imported, setImported] = useState(false);
-  const [selectedRows, setSelectedRows] = useState([{}]);
   const [browse, setBrowse] = useState(true);
   var [counter, setCounter] = useState(1);
 
@@ -23,7 +20,6 @@ function App() {
         console.log(err);            
       }
       else{
-        setCols(resp.cols);
         setRows(resp.rows);
         setImported(true);
         console.log(resp.rows);
@@ -56,8 +52,6 @@ function App() {
     setStarted(true);
     const withoutSelected = rows.filter((data) => data[1] !== completion);
     setRows(withoutSelected);
-    const withSelected = rows.filter((data) => data[1] == completion);
-    setSelectedRows(withSelected);
     completion = "selected";
   }
 
@@ -69,8 +63,7 @@ function App() {
   // Sends the JSON Object to the Backend
   async function sendExcel() {
     console.log(selected);
-
-    var res = await fetch("http://localhost:5000/export", {
+    await fetch("http://localhost:5000/export", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
