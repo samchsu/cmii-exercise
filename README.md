@@ -10,6 +10,8 @@ In this project directory, you can run:
 
 ### `npm install`
 
+### `npm install --global yarn`
+
 This will install all the necessary dependencies.
 
 ### `npm start`
