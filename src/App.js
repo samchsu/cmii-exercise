@@ -6,13 +6,10 @@ import {OutTable, ExcelRenderer} from 'react-excel-renderer';
 function App() {
   const [cols, setCols] = useState([]);
   const [rows, setRows] = useState([{}]);
-  const [permRows, setPermRows] = useState([{}]);
-  const [list, setList] = useState(rows);
   const [selected, setSelected] = useState({});
   const [started, setStarted] = useState(false);
   const [imported, setImported] = useState(false);
   const [selectedRows, setSelectedRows] = useState([{}]);
-  const fs = require('fs');
   var [counter, setCounter] = useState(1);
   var fileHandler = (event) => {
     let fileObj = event.target.files[0];
@@ -25,7 +22,6 @@ function App() {
       else{
         setCols(resp.cols);
         setRows(resp.rows);
-        setPermRows(resp.rows);
         setImported(true);
         console.log(resp.rows);
       }
@@ -85,13 +81,21 @@ function App() {
     var res = await fetch("http://localhost:5000/export", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+
         },
         body: JSON.stringify(selected)
     })
+    .then(res => res.blob()) 
     .then(res => {
       console.log(res);
-      
+      var link = document.createElement('a');
+      // convert bite array into blob
+      link.href = window.URL.createObjectURL(res);
+      // set a human file name
+      link.download = 'my_selected_milestones.xlsx';
+      // triggers automatic download
+      link.click();
     })
   }
 
