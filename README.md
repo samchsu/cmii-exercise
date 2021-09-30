@@ -20,7 +20,7 @@ Runs the app in the development mode.\
 Upon launch, the Electron Application will run.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
+The page will reload if you make edits.
 
 ### `npm build`
 
@@ -30,7 +30,15 @@ This will build the application and create an executable file within the project
 
 In "cmii-backend" directory, you can run:
 
-### `pip install` 
+### `source venv/Scripts/activate`
+
+That will enable the venv environment.
+
+### `pip install flask` 
+
+### `pip install pandas`
+
+### `pip install flask_cors`
 
 This will install all the necessary dependencies.
 
