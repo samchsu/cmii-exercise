@@ -40,7 +40,7 @@ Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
 
 # CMII Technical Exercise - My Approach
 
-For the frontend, the The hardest part about this exercise was figuring out how to use Flask (I've only used Node.JS in the past) and finding a viable option to import a JSON Object and store it on a new Excel Spreadsheet. I struggled with flask_excel before turning over to pandas, which gave me the ability to create a new spreadsheet and store the JSON Object data as a dataframe. From there, I saved the Excel File to the Flask Server, and converted it into a blob for my React Frontend to receive as a response. This blob will then be converted into a downloadable file and the Frontend will open the file window to download "my_selected_milestones.xlsx".
+For the frontend, the hardest part about this exercise was figuring out how to use Flask (I've only used Node.JS in the past) and finding a viable option to import a JSON Object and store it on a new Excel Spreadsheet. I struggled with flask_excel before turning over to pandas, which gave me the ability to create a new spreadsheet and store the JSON Object data as a dataframe. From there, I saved the Excel File to the Flask Server, and converted it into a blob for my React Frontend to receive as a response. This blob will then be converted into a downloadable file and the Frontend will open the file window to download "my_selected_milestones.xlsx".
 
 # CMII Technical Exercise - Changes
 
