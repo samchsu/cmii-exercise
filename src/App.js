@@ -9,7 +9,7 @@ function App() {
   const [started, setStarted] = useState(false);
   const [imported, setImported] = useState(false);
   const [browse, setBrowse] = useState(true);
-  var [counter, setCounter] = useState(1);
+  var [counter, setCounter] = useState(0);
 
   var fileHandler = (event) => {
     let fileObj = event.target.files[0];
@@ -29,23 +29,23 @@ function App() {
 
   // Stores user selected milestones and first completion date into "selected" object
   async function storeMilestone(milestone, completion) {
-    if (counter === 1)
+    if (counter === 0)
     {
       setBrowse(false);
-      selected["Selected milestone(s)"] = [
+      selected["Selected milestone(s)"] = 
       {
-        milestone: milestone
-      }]
+        [counter]: milestone
+      }
 
-      selected["Selected completion date"] = [
+      selected["Selected completion date"] = 
       {
-        date: completion
-      }]
+        [counter]: completion
+      }
     }
     else 
     {
-      selected["Selected milestone(s)"].push({milestone: milestone})
-      selected["Selected completion date"].push({})
+      selected["Selected milestone(s)"] = {...selected["Selected milestone(s)"], [counter]: milestone}
+      selected["Selected completion date"] = {...selected["Selected completion date"], [counter]: ""}
     }
     
     setCounter(counter+1);
@@ -63,6 +63,7 @@ function App() {
   // Sends the JSON Object to the Backend
   async function sendExcel() {
     console.log(selected);
+  
     await fetch("http://localhost:5000/export", {
         method: "POST",
         headers: {

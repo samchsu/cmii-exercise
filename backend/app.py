@@ -24,12 +24,6 @@ def hello_world():
 @app.route("/export", methods=['POST'])
 @cross_origin(headers=['Content-Type','Authorization'])
 def export():
-    # Create a dataframe from JSON object
-    # obj = pd.read_json(request.json)
-    # print(obj.to_string())
-    # print(pd.read_json(request.json), file=sys.stderr)
-    check = pd.DataFrame.from_dict(request.json)
-    print(request.json, file=sys.stderr)
     df = pd.DataFrame(request.json)
 
     # Generate new Excel File containing data from JSON 
