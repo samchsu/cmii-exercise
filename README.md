@@ -41,7 +41,7 @@ For the frontend, the hardest part about this exercise was figuring out how to u
 
 # CMII Technical Exercise - Changes
 
-I would create a "select & unselect" system for the user, rather than a "select and start over" system if the user accidentally clicks on a milestone. Also, the first object imported from excel sheet is the title ("Milestone" and "Completion Time") and should not be clickable by the user. If this application was used for another excel sheet, I would be creating an edge case if I were to skip over the first object. Because of this, I did not end up changing the state of that object. In addition, the new excel sheet contains the user selected milestones and organizes them by columns "Selected milestone(s) and Selected completion date", but fails to remove the JSON Object format. If I was given more time, I would have the milestones and the one completion date not display as Key, Value pairs. I would also only permit users to submit files with .xlsx filetype.
+I would create a "select & unselect" system for the user, rather than a "select and start over" system if the user accidentally clicks on a milestone. Also, the first object imported from excel sheet is the title ("Milestone" and "Completion Time") and should not be clickable by the user. If this application was used for another excel sheet, I would be creating an edge case if I were to skip over the first object. Because of this, I did not end up changing the state of that object. I would only permit users to submit files with .xlsx filetype.
 
 # Final Thoughts
 
