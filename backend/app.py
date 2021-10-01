@@ -3,8 +3,6 @@
 
 from flask import Flask, request, send_from_directory
 import pandas as pd
-import json
-from pandas.io.json import json_normalize
 import sys
 from flask_cors import CORS, cross_origin
 
