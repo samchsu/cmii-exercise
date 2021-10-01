@@ -7,6 +7,7 @@ import json
 from pandas.io.json import json_normalize
 import sys
 from flask_cors import CORS, cross_origin
+
 app = Flask(__name__)
 
 # Enable CORS 
@@ -25,7 +26,6 @@ def hello_world():
 @cross_origin(headers=['Content-Type','Authorization'])
 def export():
     df = pd.DataFrame(request.json)
-
     # Generate new Excel File containing data from JSON 
     writer = pd.ExcelWriter("my_selected_milestones.xlsx", engine='xlsxwriter')
     df.to_excel(writer, sheet_name='My Selected Milestones', startrow=1, header=False, index=False)
@@ -36,7 +36,7 @@ def export():
     column_settings = [{'header': column} for column in df.columns]
 
     # Add the table.
-    worksheet.add_table(0, 0, max_row, max_col - 1, {'columns': column_settings})
+    worksheet.add_table(0, 0, max_row, max_col - 1, {'columns': column_settings, 'style': None})
 
     # Make the columns wider.
     worksheet.set_column(0, max_col - 1, 25)
