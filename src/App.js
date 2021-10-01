@@ -5,7 +5,7 @@ import {ExcelRenderer} from 'react-excel-renderer';
 function App() {
   // Hooks used
   const [rows, setRows] = useState({});
-  const [selected, setSelected] = useState({});
+  const [selected] = useState({});
   const [started, setStarted] = useState(false);
   const [imported, setImported] = useState(false);
   const [browse, setBrowse] = useState(true);
@@ -104,7 +104,7 @@ function App() {
           : ""}
           { imported ? rows.map((data, i)=> (
             <li key={i}>
-                   <div className='milestones'><a onClick={() => storeMilestone(data[0], data[1])}> {data[0]} - {data[1]}</a></div> 
+                   <div className='milestones' onClick={() => storeMilestone(data[0], data[1])}> {data[0]} - {data[1]}</div> 
             </li> 
           ))
           : ""}
