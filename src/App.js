@@ -100,7 +100,7 @@ function App() {
           <input type="file" onChange={fileHandler} id="input-file" style={{"padding":"10px"}} />
         </label></div>) : <div onClick={refresh} className="start-over"> Start Over </div>}
         <ul>
-          { imported ? (<div className='instruction'>Please choose from the following milestones:</div>)
+          { imported ? (<div className='instruction'>Please choose from the following milestones: <br/> (First selected Milestone will be the chosen Completion Date)</div>)
           : ""}
           { imported ? rows.map((data, i)=> (
             <li key={i}>
